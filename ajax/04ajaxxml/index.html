@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html  lang="es">
+<head>
+	<meta charset='utf-8'>
+	<title>Ajax con db</title>
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.1/flatly/bootstrap.min.css" rel="stylesheet">
+<head>
+<script>
+function cargarDocXml(url)
+{
+var xmlhttp;
+var txt,x,xx,i;
+if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else{// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function(){
+  if (xmlhttp.readyState==4 && xmlhttp.status==200){
+    txt="<table class='table'><tr><th>Titulo</th><th>Artista</th></tr>";
+    x=xmlhttp.responseXML.documentElement.getElementsByTagName("CD");
+    for (i=0;i<x.length;i++)
+      {
+      txt=txt + "<tr>";
+      xx=x[i].getElementsByTagName("TITLE");{
+			try{
+			  txt=txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+			  }
+			catch (er){
+			  txt=txt + "<td> </td>";
+			  }
+        }
+      xx=x[i].getElementsByTagName("ARTIST");{
+        try{
+          txt=txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+          }
+        catch (er){
+          txt=txt + "<td> </td>";
+          }
+        }
+      txt=txt + "</tr>";
+      }
+    txt=txt + "</table>";
+    document.getElementById('txtCDInfo').innerHTML=txt;
+    }
+  }
+xmlhttp.open("GET",url,true);
+xmlhttp.send();
+}
+</script>
+</head>
+<body>
+
+<div class="container">
+<div id="txtCDInfo">
+<button onclick="cargarDocXml('catalogo_cd.xml')">Ver Catalogo CD</button>
+</div>
+</div>
+
+</body>
+</html>

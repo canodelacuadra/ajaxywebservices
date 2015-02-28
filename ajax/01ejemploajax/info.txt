@@ -1,0 +1,2 @@
+<p>AJAX no es un lenguaje de programción.</p>
+<p>AJAX es una técnica para crear páginas web dinámicas.</p>
