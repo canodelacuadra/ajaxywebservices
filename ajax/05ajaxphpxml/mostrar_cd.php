@@ -4,7 +4,7 @@ $q=$_GET["q"];
 $xmlDoc = new DOMDocument();
 $xmlDoc->load("catalogo_cd.xml");
 
-$x=$xmlDoc->getElementsByTagName('ARTIST');
+$x=$xmlDoc->getElementsByTagName('ARTISTA');
 
 for ($i=0; $i<=$x->length-1; $i++) {
   //Process only element nodes
@@ -20,7 +20,7 @@ $cd=($y->childNodes);
 for ($i=0;$i<$cd->length;$i++) { 
   //Process only element nodes
   if ($cd->item($i)->nodeType==1) {
-    echo("<b>" . $cd->item($i)->nodeName . ":</b> ");
+    echo("<strong>" . $cd->item($i)->nodeName . ":</strong> ");
     echo($cd->item($i)->childNodes->item(0)->nodeValue);
     echo("<br>");
   }
