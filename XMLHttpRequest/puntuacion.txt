@@ -1,0 +1,1 @@
+<div class='alert'>Nombre:jose</div>Voto:0Nombre:5<br>Voto:4<br><br>Nombre:5<br>Voto:4<br><br>Nombre:5<br>Voto:3<br><br>Nombre:<br>Voto:2<br><br>Nombre:<br>Voto:3<br><br>Nombre:<br>Voto:6<br><br>

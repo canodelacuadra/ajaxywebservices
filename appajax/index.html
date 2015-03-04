@@ -17,27 +17,24 @@
 		</select>
 	</form>
 	
-	<div id='display'>
-	</div>
+	<div id='display'></div>
 	</div>
 <script>
+
 function verLibros(){
-	var conLibros= new XMLHttpRequest();
-	conLibros.onreadystatechange=function(){
-		if((conLibros.readyState==4)&&(conLibros.status==200)){
-			document.getElementById('display').innerHTML=conLibros.responseText;
-		}else{
-			document.getElementById('display').innerHTML='Algo falla';
+	var infoAjax;
+	infoAjax=new XMLHttpRequest();
+	infoAjax.onreadystatechange=function(){
+	  if (infoAjax.readyState==4 && infoAjax.status==200){
+		document.getElementById("display").innerHTML=infoAjax.responseText;
 		}
-		conLibros.open('GET','libros.xml',true);
-		conLibros.send();
-	
 	}
+	infoAjax.open("GET","libros.xml",true);
+	infoAjax.send();
 	
-
-
 }
 </script>
+
 </body>
 </html>
 
