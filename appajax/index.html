@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html  lang="es">
+<head>
+	<meta charset='utf-8'>
+	<title>Primera app ajax</title>
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.1/flatly/bootstrap.min.css" rel="stylesheet">
+</head>
+	<body>
+	<div class='container'>
+	<h1>Mira los libros </h1>
+	<form>
+		<select id='libros' onchange='verLibros()'>
+			<option  value=''default>selecciona</option>
+			<option value='ficcion'>Ficción</option>
+			<option value='poesia'>Poesía</option>
+		</select>
+	</form>
+	
+	<div id='display'>
+	</div>
+	</div>
+<script>
+function verLibros(){
+	var conLibros= new XMLHttpRequest();
+	conLibros.onreadystatechange=function(){
+		if((conLibros.readyState==4)&&(conLibros.status==200)){
+			document.getElementById('display').innerHTML=conLibros.responseText;
+		}else{
+			document.getElementById('display').innerHTML='Algo falla';
+		}
+		conLibros.open('GET','libros.xml',true);
+		conLibros.send();
+	
+	}
+	
+
+
+}
+</script>
+</body>
+</html>
+
+
+
+

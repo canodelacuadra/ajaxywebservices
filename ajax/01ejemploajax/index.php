@@ -7,35 +7,29 @@
 	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.1/flatly/bootstrap.min.css" rel="stylesheet">
 
 <script>
-function cargarDoc()
-{
-var xmlhttp;
-if (window.XMLHttpRequest)
-  {// code for IE7+, Firefox, Chrome, Opera, Safari
-  xmlhttp=new XMLHttpRequest();
-  }
-else
-  {// code for IE6, IE5
-  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  }
-xmlhttp.onreadystatechange=function()
-  {
-  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-    {
-    document.getElementById("miDiv").innerHTML=xmlhttp.responseText;
-    }
-  }
-xmlhttp.open("GET","info.txt",true);
-xmlhttp.send();
+function cargarDoc(){
+	var infoAjax;
+	infoAjax=new XMLHttpRequest();
+	infoAjax.onreadystatechange=function(){
+	  if (infoAjax.readyState==4 && infoAjax.status==200){
+		document.getElementById("display").innerHTML=infoAjax.responseText;
+		}
+	}
+	infoAjax.open("GET","info.txt",true);
+	infoAjax.send();
+	
 }
+setInterval(cargarDoc,5000);
 </script>
 </head>
 <body>
 
 <div class="container">
-<div id="miDiv"><h2>Este texto lo cambiará Ajax</h2></div>
+<div id="miDiv"><h2>Primera app ajax</h2></div>
+<div id="miDiv"><h2>Primera app ajax</h2></div>
 <button  class='btn btn-primary'type="button" onclick="cargarDoc()">Cambiar Contenido</button>
 </div>
+<div id="display"></div>
 
 </body>
 </html>
