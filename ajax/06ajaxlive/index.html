@@ -7,24 +7,14 @@
 	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.1/flatly/bootstrap.min.css" rel="stylesheet">
 <script>
 function mostrarResultados(str) {
-  if (str.length==0) { 
-    document.getElementById("busquedalive").innerHTML="";
-    document.getElementById("busquedalive").style.border="0px";
-    return;
-  }
-  if (window.XMLHttpRequest) {
-    // codigo para IE7+, Firefox, Chrome, Opera, Safari
-    xmlhttp=new XMLHttpRequest();
-  } else {  // codigo para  IE6, IE5
-    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  }
-  xmlhttp.onreadystatechange=function() {
+   xmlhttp=new XMLHttpRequest();
+	xmlhttp.onreadystatechange=function() {
     if (xmlhttp.readyState==4 && xmlhttp.status==200) {
       document.getElementById("busquedalive").innerHTML=xmlhttp.responseText;
-      document.getElementById("busquedalive").style.border="1px solid #333";
+    
     }
   }
-  xmlhttp.open("GET","busquedalive.php?q="+str,true);
+  xmlhttp.open("GET","controlador.php?q="+str,true);
   xmlhttp.send();
 }
 </script>
@@ -35,7 +25,7 @@ function mostrarResultados(str) {
 <h1>Búsqueda live</h1>
 <form>
 <input type="text" size="30" onkeyup="mostrarResultados(this.value)">
-<div id="busquedalive"></div>
+<div class='well'id="busquedalive"></div>
 </form>
 </div>
 
