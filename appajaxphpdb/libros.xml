@@ -1,11 +1,16 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
 <libros>
-	<libro categoria='ficcion'>
+	<libro categoria='novela'>
 		<titulo>Las aventuras de un llorón</titulo>
 		<autor>Ulises J.</autor>
 		<sinopsis>La vida tal cual</sinopsis>
 	</libro>
-	<libro categoria='poesia'>
+	<libro categoria='ensayo'>
+		<titulo>Nunca más</titulo>
+		<autor>P.J. Nambroca</autor>
+		<sinopsis>poemas sobre errores</sinopsis>
+	</libro>
+	<libro categoria='sin categoria'>
 		<titulo>Nunca más</titulo>
 		<autor>P.J. Nambroca</autor>
 		<sinopsis>poemas sobre errores</sinopsis>

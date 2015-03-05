@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html  lang="es">
+<head>
+	<meta charset='utf-8'>
+	<title>Primera app ajax</title>
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.1/flatly/bootstrap.min.css" rel="stylesheet">
+</head>
+	<body>
+	<div class='container'>
+	<h1>Mira los libros </h1>
+	<form>
+		<select id='libros' onchange='verLibros(this.value)'>
+			<option  value=''default>selecciona</option>
+			<option value='novela'>novela</option>
+			<option value='ensayo'>Ensayo</option>
+			<option value='sinCategoria'>Sin categoria</option>
+		</select>
+	</form>
+	
+	<div id='display'></div>
+	</div>
+<script>
+
+function verLibros(genero){
+	var infoAjax;
+	var genero;
+	infoAjax=new XMLHttpRequest();
+	infoAjax.onreadystatechange=function(){
+	  if (infoAjax.readyState==4 && infoAjax.status==200){
+		document.getElementById("display").innerHTML=infoAjax.responseText;
+		}
+	}
+	infoAjax.open("GET","controlador.php?q="+genero,true);
+	infoAjax.send();
+	 genero=document.getElementById('libros').value;
+	 console.log(genero);
+	
+}
+</script>
+
+</body>
+</html>
+
+
+
+

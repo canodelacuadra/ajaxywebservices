@@ -5,6 +5,21 @@
 	<title>Ajax con php y xml </title>
 		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.1/flatly/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container">
+<form>
+Selecciona un CD:
+<select name="cds" onchange="mostrarCD(this.value)">
+<option value="">Selecciona un CD:</option>
+<option value="Bob Dylan">Bob Dylan</option>
+<option value="Bonnie Tyler">Bonnie Tyler</option>
+<option value="Dolly Parton">Dolly Parton</option>
+</select>
+</form>
+<div id="txtHint"></div></div>
 <script>
 function mostrarCD(str) {
   if (str=="") {
@@ -26,20 +41,5 @@ function mostrarCD(str) {
   xmlhttp.send();
 }
 </script>
-</head>
-<body>
-
-<div class="container">
-<form>
-Selecciona un CD:
-<select name="cds" onchange="mostrarCD(this.value)">
-<option value="">Selecciona un CD:</option>
-<option value="Bob Dylan">Bob Dylan</option>
-<option value="Bonnie Tyler">Bonnie Tyler</option>
-<option value="Dolly Parton">Dolly Parton</option>
-</select>
-</form>
-<div id="txtHint"></div></div>
-
 </body>
 </html>

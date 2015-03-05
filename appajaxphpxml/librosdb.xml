@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pma_xml_export version="1.0" xmlns:pma="http://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="biblioteca" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="libros">
+                CREATE TABLE `libros` (
+                  `codigo` int(11) NOT NULL AUTO_INCREMENT,
+                  `titulo` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+                  `autor` varchar(30) COLLATE utf8_spanish2_ci DEFAULT NULL,
+                  `editorial` varchar(25) COLLATE utf8_spanish2_ci DEFAULT NULL,
+                  `precio` decimal(6,2) NOT NULL DEFAULT '0.00',
+                  `num_ejemplares` int(3) NOT NULL DEFAULT '1',
+                  `genero` enum('Sin categoria','novela','ensayo','poesia','teatro') COLLATE utf8_spanish2_ci DEFAULT 'Sin categoria',
+                  PRIMARY KEY (`codigo`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Base de datos: 'biblioteca'
+    -->
+    <database name="biblioteca">
+        <!-- Tabla libros -->
+        <table name="libros">
+            <column name="codigo">1</column>
+            <column name="titulo">El Aleph</column>
+            <column name="autor">Borges</column>
+            <column name="editorial">Paidós</column>
+            <column name="precio">20.58</column>
+            <column name="num_ejemplares">1</column>
+            <column name="genero">novela</column>
+        </table>
+        <table name="libros">
+            <column name="codigo">2</column>
+            <column name="titulo">Alicia en el pais de las maravillas</column>
+            <column name="autor">Lewis Carroll</column>
+            <column name="editorial">Planeta</column>
+            <column name="precio">15.10</column>
+            <column name="num_ejemplares">1</column>
+            <column name="genero">novela</column>
+        </table>
+        <table name="libros">
+            <column name="codigo">4</column>
+            <column name="titulo">Javascript en 10 minutos</column>
+            <column name="autor">Juan Lopez</column>
+            <column name="editorial">Wrox</column>
+            <column name="precio">20.30</column>
+            <column name="num_ejemplares">1</column>
+            <column name="genero">ensayo</column>
+        </table>
+        <table name="libros">
+            <column name="codigo">5</column>
+            <column name="titulo">Alicia a traves del espejo</column>
+            <column name="autor">Lewis Carroll</column>
+            <column name="editorial">Paidós</column>
+            <column name="precio">69.00</column>
+            <column name="num_ejemplares">1</column>
+            <column name="genero">novela</column>
+        </table>
+        <table name="libros">
+            <column name="codigo">6</column>
+            <column name="titulo">Cervantes y el Quijo</column>
+            <column name="autor">Borges</column>
+            <column name="editorial">Bio y Casares P</column>
+            <column name="precio">10.00</column>
+            <column name="num_ejemplares">1</column>
+            <column name="genero">ensayo</column>
+        </table>
+        <table name="libros">
+            <column name="codigo">7</column>
+            <column name="titulo">Ajax</column>
+            <column name="autor">Javier Mellado</column>
+            <column name="editorial">Anaya Multimedia</column>
+            <column name="precio">25.00</column>
+            <column name="num_ejemplares">2</column>
+            <column name="genero">ensayo</column>
+        </table>
+        <table name="libros">
+            <column name="codigo">8</column>
+            <column name="titulo">Africanus</column>
+            <column name="autor">Santiago Posteguillo</column>
+            <column name="editorial">Ediciones B</column>
+            <column name="precio">8.00</column>
+            <column name="num_ejemplares">1</column>
+            <column name="genero">novela</column>
+        </table>
+        <table name="libros">
+            <column name="codigo">9</column>
+            <column name="titulo">Las Aventuras de Tintín</column>
+            <column name="autor">NULL</column>
+            <column name="editorial">Norma</column>
+            <column name="precio">20.24</column>
+            <column name="num_ejemplares">5</column>
+            <column name="genero">Sin categoria</column>
+        </table>
+    </database>
+</pma_xml_export>

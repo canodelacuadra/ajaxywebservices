@@ -27,17 +27,17 @@ echo "<table class='table'>
 <tr>
 <th>titulo</th>
 <th>autor</th>
-<th>Codigo Editorial</th>
+<th>Editorial</th>
 <th>Precio</th>
-<th>cantidad</th>
+<th>Numero de ejemplares</th>
 </tr>";
 while($row = mysqli_fetch_array($result)) {
     echo "<tr>";
     echo "<td>" . $row['titulo'] . "</td>";
     echo "<td>" . $row['autor'] . "</td>";
-    echo "<td>" . $row['codigoeditorial'] . "</td>";
+    echo "<td>" . $row['editorial'] . "</td>";
     echo "<td>" . $row['precio'] . "</td>";
-    echo "<td>" . $row['cantidad'] . "</td>";
+    echo "<td>" . $row['num_ejemplares'] . "</td>";
     echo "</tr>";
 }
 echo "</table>";

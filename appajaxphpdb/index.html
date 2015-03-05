@@ -10,10 +10,11 @@
 	<div class='container'>
 	<h1>Mira los libros </h1>
 	<form>
-		<select id='libros' onchange='verLibros()'>
+		<select id='libros' onchange='verLibros(this.value)'>
 			<option  value=''default>selecciona</option>
-			<option value='ficcion'>Ficción</option>
-			<option value='poesia'>Poesía</option>
+			<option value='novela'>novela</option>
+			<option value='ensayo'>Ensayo</option>
+			<option value='sinCategoria'>Sin categoria</option>
 		</select>
 	</form>
 	
@@ -21,16 +22,19 @@
 	</div>
 <script>
 
-function verLibros(){
+function verLibros(genero){
 	var infoAjax;
+	var genero;
 	infoAjax=new XMLHttpRequest();
 	infoAjax.onreadystatechange=function(){
 	  if (infoAjax.readyState==4 && infoAjax.status==200){
 		document.getElementById("display").innerHTML=infoAjax.responseText;
 		}
 	}
-	infoAjax.open("GET","libros.xml",true);
+	infoAjax.open("GET","controlador.php?q="+genero,true);
 	infoAjax.send();
+	 genero=document.getElementById('libros').value;
+	 console.log(genero);
 	
 }
 </script>

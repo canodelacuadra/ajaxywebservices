@@ -5,7 +5,22 @@
 	<title>Ajax con db</title>
 		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.1/flatly/bootstrap.min.css" rel="stylesheet">
-<head>
+</head>
+<body>
+<div class=" container">
+<h1>Información de libros</h1>
+<form>
+<select class='form-group' name="libros" onchange="mostrarLibro(this.value)">
+  <option value="">Selecciona un libro:</option>
+  <option value="1">El Aleph</option>
+  <option value="2">Alicia en el pais de las Maravillas</option>
+  <option value="3">Aprenda PHP</option>
+  <option value="4">Java en 10 minutos</option>
+  </select>
+</form>
+
+<div id="txtHint"></div>
+</div>
 <script>
 function mostrarLibro(str) {
     if (str == "") {
@@ -29,21 +44,5 @@ function mostrarLibro(str) {
     }
 }
 </script>
-</head>
-<body>
-<div class=" container">
-<h1>Información de libros</h1>
-<form>
-<select class='form-group' name="libros" onchange="mostrarLibro(this.value)">
-  <option value="">Selecciona un libro:</option>
-  <option value="1">El Aleph</option>
-  <option value="2">Alicia en el pais de las Maravillas</option>
-  <option value="3">Aprenda PHP</option>
-  <option value="4">Java en 10 minutos</option>
-  </select>
-</form>
-
-<div id="txtHint"></div>
-</div>
 </body>
 </html>
