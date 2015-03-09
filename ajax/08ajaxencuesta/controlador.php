@@ -29,14 +29,14 @@ fclose($fp);
 	<tr>
 		<td>Sí:</td>
 		<td>
-		<img src="poll.gif"width='<?=(100*round($si/($no+$si),2)); ?>'height='20'>
+		<img src="poll.gif"width='<?=(100*round($si/($no+$si),2)); ?>'height='20px'>
 		<?=(100*round($si/($no+$si),2)); ?>%
 		</td>
 	</tr>
 	<tr>
 		<td>No:</td>
 		<td>
-		<img src="poll.gif" width='<?=(100*round($no/($no+$si),2)); ?>'height='20'>
+		<img src="poll.gif" width='<?=(100*round($no/($no+$si),2)); ?>'height='20px'>
 		<?=(100*round($no/($no+$si),2)); ?>%
 		</td>
 	</tr>
